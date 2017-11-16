@@ -70,7 +70,7 @@ class UpdiNvmProgrammer(object):
             raise Exception("Enter progmode first!")
 
         # Find the number of pages
-        pages = size / self.device.flash_pagesize
+        pages = size // self.device.flash_pagesize
         if size % self.device.flash_pagesize:
             raise Exception("Only full page aligned flash supported.")
 
